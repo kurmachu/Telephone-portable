@@ -254,6 +254,7 @@ MonoBehaviour:
   telephoneBody: {fileID: 397265881}
   dragHeld: 10
   maxDrag: 10
+  strength: 100
 --- !u!1 &571404826
 GameObject:
   m_ObjectHideFlags: 0
