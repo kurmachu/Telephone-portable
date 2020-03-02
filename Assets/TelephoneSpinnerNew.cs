@@ -41,7 +41,7 @@ public class TelephoneSpinnerNew : MonoBehaviour
             }
             if (lastHeld)
             {
-                telephoneBody.angularDrag = Mathf.Lerp(dragHeld, drag, Vector3.Distance(lastpos, position) / maxDrag);
+                telephoneBody.angularDrag = ((telephoneBody.angularDrag+Mathf.Lerp(dragHeld, drag, Vector3.Distance(lastpos, position) / maxDrag))/2);
                 Debug.Log(telephoneBody.angularDrag);
             }
             Vector3 toad = position - lastpos;
