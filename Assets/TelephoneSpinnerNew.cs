@@ -29,7 +29,7 @@ public class TelephoneSpinnerNew : MonoBehaviour
             position = touch.position;
             held = true;
         }
-        else if (Input.touchCount<0&&Input.GetMouseButton(0))
+        else if (Input.touchCount<1&&Input.GetMouseButton(0))
         {
             position = Input.mousePosition;
             held = true;
