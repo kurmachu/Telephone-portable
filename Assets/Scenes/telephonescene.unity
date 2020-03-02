@@ -253,8 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   telephoneBody: {fileID: 397265881}
   dragHeld: 10
-  maxDrag: 10
-  strength: 100
+  strength: 50
   increaseRate: 0
 --- !u!1 &571404826
 GameObject:
