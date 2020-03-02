@@ -10,10 +10,12 @@ public class TelephoneSpinnerNew : MonoBehaviour
     private float drag;
     public float maxDrag = 1;
     public float strength;
+    public float increaseRate;
     // Start is called before the first frame update
     void Start()
     {
         drag = telephoneBody.angularDrag;
+        telephoneBody.maxAngularVelocity = 100f;
     }
 
     // Update is called once per frame
@@ -41,11 +43,11 @@ public class TelephoneSpinnerNew : MonoBehaviour
             }
             if (lastHeld)
             {
-                telephoneBody.angularDrag = ((telephoneBody.angularDrag+Mathf.Lerp(dragHeld, drag, Vector3.Distance(lastpos, position) / maxDrag))/2);
+                telephoneBody.angularDrag = Mathf.Lerp(dragHeld, drag, Vector3.Distance(lastpos, position) / maxDrag);
                 Debug.Log(telephoneBody.angularDrag);
             }
             Vector3 toad = position - lastpos;
-            telephoneBody.AddTorque(new Vector3(toad.y, -toad.x, 0)*Time.deltaTime*strength, ForceMode.Acceleration);
+            telephoneBody.AddTorque(new Vector3(toad.y, -toad.x, 0)*Time.deltaTime*strength*(1+increaseRate*HypotenuseLength(telephoneBody.angularVelocity.x,telephoneBody.angularVelocity.y)), ForceMode.Acceleration);
             lastpos = position;
         }
         else
@@ -53,6 +55,11 @@ public class TelephoneSpinnerNew : MonoBehaviour
             telephoneBody.angularDrag = drag;
             lastHeld = false;
         }
+    }
+
+    float HypotenuseLength(float sideALength, float sideBLength)
+    {
+        return Mathf.Sqrt(sideALength * sideALength + sideBLength * sideBLength);
     }
 
     private Vector3 lastpos;

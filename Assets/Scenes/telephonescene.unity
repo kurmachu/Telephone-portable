@@ -255,6 +255,7 @@ MonoBehaviour:
   dragHeld: 10
   maxDrag: 10
   strength: 100
+  increaseRate: 0
 --- !u!1 &571404826
 GameObject:
   m_ObjectHideFlags: 0
