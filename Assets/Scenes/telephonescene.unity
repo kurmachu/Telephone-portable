@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telephoneBody: {fileID: 397265881}
+  cameraTransform: {fileID: 571404829}
   dragHeld: 10
   strength: 50
   increaseRate: 0

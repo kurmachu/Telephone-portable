@@ -5,6 +5,7 @@ using UnityEngine;
 public class TelephoneSpinnerNew : MonoBehaviour
 {
     public Rigidbody telephoneBody;
+    public Transform cameraTransform;
 
     public float dragHeld = 0.05f;
     private float drag;
@@ -28,7 +29,7 @@ public class TelephoneSpinnerNew : MonoBehaviour
             position = touch.position;
             held = true;
         }
-        else if (Input.GetMouseButton(0))
+        else if (Input.touchCount<0&&Input.GetMouseButton(0))
         {
             position = Input.mousePosition;
             held = true;
@@ -56,6 +57,31 @@ public class TelephoneSpinnerNew : MonoBehaviour
             telephoneBody.angularDrag = drag;
             lastHeld = false;
         }
+
+        if (Input.touchCount == 2)
+        {
+            Touch touch1 = Input.GetTouch(0);
+            Touch touch2 = Input.GetTouch(1);
+            float distance = Vector3.Distance(touch1.position, touch2.position);
+
+            if (!pinching)
+            {
+                pinching = true;
+                lastdist = distance;
+            }
+
+            float change = distance - lastdist;
+
+            cameraTransform.position = new Vector3(0, 0, cameraTransform.position.z + change);
+
+            lastdist = distance;
+        }
+        else
+        {
+            pinching = false;
+        }
+
+
     }
 
     float HypotenuseLength(float sideALength, float sideBLength)
@@ -65,4 +91,7 @@ public class TelephoneSpinnerNew : MonoBehaviour
 
     private Vector3 lastpos;
     private bool lastHeld;
+
+    private bool pinching;
+    private float lastdist;
 }
