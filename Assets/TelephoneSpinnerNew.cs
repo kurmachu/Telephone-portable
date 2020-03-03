@@ -12,6 +12,9 @@ public class TelephoneSpinnerNew : MonoBehaviour
     //public float maxDrag = 1;
     public float strength;
     public float increaseRate;
+    public float cameraSpeedMobile = 0.3f;
+    public float cameraSpeedDesktop = 0.3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,13 +75,18 @@ public class TelephoneSpinnerNew : MonoBehaviour
 
             float change = distance - lastdist;
 
-            cameraTransform.position = new Vector3(0, 0, cameraTransform.position.z + change);
+            cameraTransform.position = new Vector3(0, 0, cameraTransform.position.z + (change*cameraSpeedMobile));
 
             lastdist = distance;
         }
         else
         {
             pinching = false;
+        }
+
+        if(Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            cameraTransform.position = new Vector3(0, 0, cameraTransform.position.z + (Input.GetAxis("Mouse ScrollWheel") *10f* cameraSpeedDesktop));
         }
 
 
