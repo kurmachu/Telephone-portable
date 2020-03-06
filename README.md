@@ -9,6 +9,9 @@ It's a glorified model viewer that can't load models. Please leave.
 - Android
 - WebGL
 - The void
-- """""iOS""""" _(for like a week)_
+- """""iOS"""""
 
     _\*These are just the ones we release in releases. You can probably compile for more. Generally, mouse and touch are the only supported input methods._
+
+## Rights
+I own about 0.000% of the models in use. Do not download this if you do not want to break the law.
