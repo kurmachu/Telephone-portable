@@ -258,6 +258,8 @@ MonoBehaviour:
   increaseRate: 0
   cameraSpeedMobile: 0.01
   cameraSpeedDesktop: 1
+  cameraMinMax: {x: 6.07, y: 35.07}
+  cameraReturnSeconds: 10
 --- !u!1 &571404826
 GameObject:
   m_ObjectHideFlags: 0
