@@ -5,13 +5,15 @@ If you're here god has already abandoned you. <sub>_Yes this is technically "min
 ## About
 It's a glorified model viewer that can't load models. Please leave.
 
-## Supported platforms
+## Supported platforms*
 - Android
 - WebGL
 - The void
-- """""iOS"""""
+- """""iOS""""" _(For like a week unless you are a company in which case you are probably not building this project)_
 
-    _\*These are just the ones we release in releases. You can probably compile for more. Generally, mouse and touch are the only supported input methods._
+    _\*These are just the ones we release in releases**. You can probably compile for more. Generally, mouse and touch are the only supported input methods._
+    
+    _**We have 0 releases._
 
 ## Rights
 I own about 0.000% of the models in use. Do not download this if you do not want to break the law.
